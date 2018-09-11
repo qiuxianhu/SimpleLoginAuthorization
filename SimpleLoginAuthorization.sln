@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27906.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleLoginAuthorization", "SimpleLoginAuthorization\SimpleLoginAuthorization.csproj", "{10066487-1E2E-46B0-8F6D-A3C9536085AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10066487-1E2E-46B0-8F6D-A3C9536085AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10066487-1E2E-46B0-8F6D-A3C9536085AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10066487-1E2E-46B0-8F6D-A3C9536085AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10066487-1E2E-46B0-8F6D-A3C9536085AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3782D9BE-EA06-4833-A213-AA4EEBC2174E}
+	EndGlobalSection
+EndGlobal
