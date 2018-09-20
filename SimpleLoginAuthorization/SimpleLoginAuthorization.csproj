@@ -103,13 +103,50 @@
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BIZ\PermissionBIZ.cs" />
+    <Compile Include="Common\Caching\IAcquireContext.cs" />
+    <Compile Include="Common\Caching\IAsyncTokenProvider.cs" />
+    <Compile Include="Common\Caching\ICache.cs" />
+    <Compile Include="Common\Caching\ICacheContextAccessor.cs" />
+    <Compile Include="Common\Caching\ICacheHolder.cs" />
+    <Compile Include="Common\Caching\ICacheManager.cs" />
+    <Compile Include="Common\Caching\IClockMonitor.cs" />
+    <Compile Include="Common\Caching\IDependency.cs" />
+    <Compile Include="Common\Caching\IParallelCacheContext.cs" />
+    <Compile Include="Common\Caching\ISignals.cs" />
+    <Compile Include="Common\Caching\IVolatileProvider.cs" />
+    <Compile Include="Common\Caching\IVolatileToken.cs" />
+    <Compile Include="Common\Caching\Weak.cs" />
+    <Compile Include="Common\JsonManager.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="DB\BLL\Account_permissionBLL.cs" />
+    <Compile Include="DB\DAL\Account_groupDAL.cs" />
+    <Compile Include="DB\DAL\Account_grouppermissionassignDAL.cs" />
+    <Compile Include="DB\DAL\Account_permissionDAL.cs" />
+    <Compile Include="DB\DAL\Account_userDAL.cs" />
+    <Compile Include="DB\DAL\Account_usergroupassignDAL.cs" />
+    <Compile Include="DB\IDAL\IAccount_grouppermissionassignDAL.cs" />
+    <Compile Include="DB\DAL\SqlHelper.cs" />
+    <Compile Include="DB\DBFactory\DALFactory.cs" />
+    <Compile Include="DB\Entity\Account_group.cs" />
+    <Compile Include="DB\Entity\Account_grouppermissionassign.cs" />
+    <Compile Include="DB\Entity\Account_permission.cs" />
+    <Compile Include="DB\Entity\Account_user.cs" />
+    <Compile Include="DB\Entity\Account_usergroupassign.cs" />
+    <Compile Include="DB\Entity\IEntity.cs" />
+    <Compile Include="DB\Entity\WhereBuilder.cs" />
+    <Compile Include="DB\Entity\_Partial.cs" />
+    <Compile Include="DB\IDAL\IAccount_groupDAL.cs" />
+    <Compile Include="DB\IDAL\IAccount_permissionDAL.cs" />
+    <Compile Include="DB\IDAL\IAccount_userDAL.cs" />
+    <Compile Include="DB\IDAL\IAccount_usergroupassignDAL.cs" />
     <Compile Include="Filters\AuthorizeFilterAttribute.cs" />
     <Compile Include="Filters\PermissionFilterAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\JsonModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -133,7 +170,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
