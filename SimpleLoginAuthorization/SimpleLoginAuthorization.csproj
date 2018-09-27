@@ -118,9 +118,14 @@
     <Compile Include="Common\Caching\IVolatileToken.cs" />
     <Compile Include="Common\Caching\Weak.cs" />
     <Compile Include="Common\JsonManager.cs" />
+    <Compile Include="Common\SerializeHelper.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="DB\BLL\Account_groupBLL.cs" />
+    <Compile Include="DB\BLL\Account_grouppermissionassignBLL.cs" />
     <Compile Include="DB\BLL\Account_permissionBLL.cs" />
+    <Compile Include="DB\BLL\Account_userBLL.cs" />
+    <Compile Include="DB\BLL\Account_usergroupassignBLL.cs" />
     <Compile Include="DB\DAL\Account_groupDAL.cs" />
     <Compile Include="DB\DAL\Account_grouppermissionassignDAL.cs" />
     <Compile Include="DB\DAL\Account_permissionDAL.cs" />
@@ -146,7 +151,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\FormsAuthenticationTicketBuilder.cs" />
     <Compile Include="Models\JsonModel.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

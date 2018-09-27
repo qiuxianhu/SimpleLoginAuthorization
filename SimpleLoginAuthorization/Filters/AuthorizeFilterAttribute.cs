@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -42,14 +41,10 @@ namespace SimpleLoginAuthorization
             }
             return httpContext.User.Identity.IsAuthenticated;
         }
-        private void CacheValidateHandler(HttpContext context,object data,ref HttpValidationStatus validationStatus)
-        {
-            validationStatus = this.OnCacheAuthorization(new HttpContextWrapper(context));
-        }
         protected virtual void HandleUnauthorizedRequest(AuthorizationContext filterContext)
         {
             filterContext.Result = new HttpUnauthorizedResult();
-        }
+        }               
         /// <summary>
         /// 这个方法必须是线程安全的,由缓存调用。
         /// </summary>
@@ -62,8 +57,11 @@ namespace SimpleLoginAuthorization
                 throw new ArgumentNullException("httpContext");
             }
             return this.AuthorizeCore(httpContext) ? HttpValidationStatus.Valid : HttpValidationStatus.IgnoreThisRequest;
-        }        
-
+        }
+        private void CacheValidateHandler(HttpContext context, object data, ref HttpValidationStatus validationStatus)
+        {
+            validationStatus = this.OnCacheAuthorization(new HttpContextWrapper(context));
+        }
         #region IAuthorizationFilter 方法
         public void OnAuthorization(AuthorizationContext filterContext)
         {

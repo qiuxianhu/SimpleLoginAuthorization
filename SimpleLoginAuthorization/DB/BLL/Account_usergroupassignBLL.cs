@@ -4,25 +4,22 @@ using System.Data;
 using System.Data.Common;
 using System.Linq.Expressions;
 
-namespace SimpleLoginAuthorization.DB
+namespace SimpleLoginAuthorization.DB.BLL
 {
-    /// <summary>
-    /// 业务逻辑层account_permission
-    /// </summary>
-    public class Account_permissionBLL
+    public class Account_usergroupassignBLL
     {
         #region ---------变量定义-----------
         ///<summary>
         ///得到数据工厂
         ///</summary>
-        private static readonly IAccount_permissionDAL _dal = DALFactory.Account_permissionDALInstance();
+        private static readonly IAccount_usergroupassignDAL _dal = DALFactory.Account_usergroupassignDALInstance();
         #endregion
 
         #region ----------构造函数----------
         /// <summary>
         /// 构造函数
         /// </summary>
-        public Account_permissionBLL()
+        public Account_usergroupassignBLL()
         {
         }
         #endregion
@@ -32,102 +29,102 @@ namespace SimpleLoginAuthorization.DB
         /// <summary>
         /// 向数据库中插入一条新记录
         /// </summary>
-        /// <param name="account_permission">Account_permission实体对象</param>
+        /// <param name="account_usergroupassign">Account_usergroupassign实体对象</param>
 #if SP
 		/// <returns>-1表示没有执行数据库操作；=0表示执行数据库操作成功；其他值表示执行数据库操作失败</returns>
 #else
         /// <returns>-1表示没有执行数据库操作；>0表示执行数据库操作成功；=0表示执行数据库操作失败</returns>
 #endif
-        public static int Insert(Account_permission account_permission)
+        public static int Insert(Account_usergroupassign account_usergroupassign)
         {
-            if (account_permission == null)
+            if (account_usergroupassign == null)
                 return -1;
-            return Account_permissionBLL._dal.Insert(account_permission);
+            return Account_usergroupassignBLL._dal.Insert(account_usergroupassign);
         }
         /// <summary>
         /// 向数据库中插入一条新记录。带事务
         /// </summary>
         /// <param name="sp">事务对象</param>
-        /// <param name="account_permission">Account_permission实体对象</param>
+        /// <param name="account_usergroupassign">Account_usergroupassign实体对象</param>
 #if SP
 		/// <returns>-1表示没有执行数据库操作；=0表示执行数据库操作成功；其他值表示执行数据库操作失败</returns>
 #else
         /// <returns>-1表示没有执行数据库操作；>0表示执行数据库操作成功；=0表示执行数据库操作失败</returns>
 #endif
-        public static int Insert(DbTransaction sp, Account_permission account_permission)
+        public static int Insert(DbTransaction sp, Account_usergroupassign account_usergroupassign)
         {
-            if (account_permission == null)
+            if (account_usergroupassign == null)
                 return -1;
-            return Account_permissionBLL._dal.Insert(sp, account_permission);
+            return Account_usergroupassignBLL._dal.Insert(sp, account_usergroupassign);
         }
         /// <summary>
         /// 向数据库中插入一条新记录。带事务
         /// </summary>
         /// <param name="con">连接对象</param>
-        /// <param name="account_permission">Account_permission实体对象</param>
+        /// <param name="account_usergroupassign">Account_usergroupassign实体对象</param>
 #if SP
 		/// <returns>-1表示没有执行数据库操作；=0表示执行数据库操作成功；其他值表示执行数据库操作失败</returns>
 #else
         /// <returns>-1表示没有执行数据库操作；>0表示执行数据库操作成功；=0表示执行数据库操作失败</returns>
 #endif
-        public static int Insert(DbConnection con, Account_permission account_permission)
+        public static int Insert(DbConnection con, Account_usergroupassign account_usergroupassign)
         {
-            if (account_permission == null)
+            if (account_usergroupassign == null)
                 return -1;
-            return Account_permissionBLL._dal.Insert(con, account_permission);
+            return Account_usergroupassignBLL._dal.Insert(con, account_usergroupassign);
         }
         #endregion
 
         #region 更新
         /// <summary>
-        /// 向数据表Account_permission更新一条记录
+        /// 向数据表Account_usergroupassign更新一条记录
         /// </summary>
-        /// <param name="account_permission">account_permission实体对象</param>
+        /// <param name="account_usergroupassign">account_usergroupassign实体对象</param>
 #if SP
 		/// <returns>-1表示没有执行数据库操作；=0表示执行数据库操作成功；其他值表示执行数据库操作失败</returns>
 #else
         /// <returns>-1表示没有执行数据库操作；>0表示执行数据库操作成功；=0表示执行数据库操作失败</returns>
 #endif
-        public static int Update(Account_permission account_permission)
+        public static int Update(Account_usergroupassign account_usergroupassign)
         {
-            if (account_permission == null)
+            if (account_usergroupassign == null)
                 return -1;
-            return Account_permissionBLL._dal.Update(account_permission);
+            return Account_usergroupassignBLL._dal.Update(account_usergroupassign);
         }
         /// <summary>
-        /// 向数据表Account_permission更新一条记录。带事务
+        /// 向数据表Account_usergroupassign更新一条记录。带事务
         /// </summary>
         /// <param name="sp">事务对象</param>
-        /// <param name="account_permission">account_permission实体对象</param>
+        /// <param name="account_usergroupassign">account_usergroupassign实体对象</param>
 #if SP
 		/// <returns>-1表示没有执行数据库操作；=0表示执行数据库操作成功；其他值表示执行数据库操作失败</returns>
 #else
         /// <returns>-1表示没有执行数据库操作；>0表示执行数据库操作成功；=0表示执行数据库操作失败</returns>
 #endif
-        public static int Update(DbTransaction sp, Account_permission account_permission)
+        public static int Update(DbTransaction sp, Account_usergroupassign account_usergroupassign)
         {
-            if (account_permission == null)
+            if (account_usergroupassign == null)
                 return -1;
-            return Account_permissionBLL._dal.Update(sp, account_permission);
+            return Account_usergroupassignBLL._dal.Update(sp, account_usergroupassign);
         }
         /// <summary>
-        /// 向数据表Account_permission更新一条记录。带事务
+        /// 向数据表Account_usergroupassign更新一条记录。带事务
         /// </summary>
         /// <param name="con">连接对象</param>
-        /// <param name="account_permission">account_permission实体对象</param>
+        /// <param name="account_usergroupassign">account_usergroupassign实体对象</param>
 #if SP
 		/// <returns>-1表示没有执行数据库操作；=0表示执行数据库操作成功；其他值表示执行数据库操作失败</returns>
 #else
         /// <returns>-1表示没有执行数据库操作；>0表示执行数据库操作成功；=0表示执行数据库操作失败</returns>
 #endif
-        public static int Update(DbConnection con, Account_permission account_permission)
+        public static int Update(DbConnection con, Account_usergroupassign account_usergroupassign)
         {
-            if (account_permission == null)
+            if (account_usergroupassign == null)
                 return -1;
-            return Account_permissionBLL._dal.Update(con, account_permission);
+            return Account_usergroupassignBLL._dal.Update(con, account_usergroupassign);
         }
         /// <summary>
-        /// 向数据表Account_permission更新一条记录
+        /// 向数据表Account_usergroupassign更新一条记录
         /// </summary>
         /// <param name="columnValue">UPDATE语句里SET内容</param>
         /// <param name="ID">iD</param>
@@ -137,20 +134,20 @@ namespace SimpleLoginAuthorization.DB
         /// <param name="parameters">UPDATE语句里SET内容的参数值</param>
         /// <returns>-1表示没有执行数据库操作；>0表示执行数据库操作成功；=0表示执行数据库操作失败</returns>
 #endif
-        public static int Update(string columnValue, string iD
+        public static int Update(string columnValue, int iD
 #if !SP
             , params DbParameter[] parameters
 #endif
         )
         {
-            return Account_permissionBLL._dal.Update(columnValue, iD
+            return Account_usergroupassignBLL._dal.Update(columnValue, iD
 #if !SP
                 , parameters
 #endif
             );
         }
         /// <summary>
-        /// 向数据表Account_permission更新一条记录，带事务
+        /// 向数据表Account_usergroupassign更新一条记录，带事务
         /// </summary>
         /// <param name="sp">事务对象</param>
         /// <param name="columnValue">UPDATE语句里SET内容</param>
@@ -161,20 +158,20 @@ namespace SimpleLoginAuthorization.DB
         /// <param name="parameters">UPDATE语句里SET内容的参数值</param>
         /// <returns>-1表示没有执行数据库操作；>0表示执行数据库操作成功；=0表示执行数据库操作失败</returns>
 #endif
-        public static int Update(DbTransaction sp, string columnValue, string iD
+        public static int Update(DbTransaction sp, string columnValue, int iD
 #if !SP
             , params DbParameter[] parameters
 #endif
         )
         {
-            return Account_permissionBLL._dal.Update(sp, columnValue, iD
+            return Account_usergroupassignBLL._dal.Update(sp, columnValue, iD
 #if !SP
                 , parameters
 #endif
             );
         }
         /// <summary>
-        /// 向数据表Account_permission更新一条记录，带事务
+        /// 向数据表Account_usergroupassign更新一条记录，带事务
         /// </summary>
         /// <param name="con">连接对象</param>
         /// <param name="columnValue">UPDATE语句里SET内容</param>
@@ -185,20 +182,20 @@ namespace SimpleLoginAuthorization.DB
         /// <param name="parameters">UPDATE语句里SET内容的参数值</param>
         /// <returns>-1表示没有执行数据库操作；>0表示执行数据库操作成功；=0表示执行数据库操作失败</returns>
 #endif
-        public static int Update(DbConnection con, string columnValue, string iD
+        public static int Update(DbConnection con, string columnValue, int iD
 #if !SP
             , params DbParameter[] parameters
 #endif
         )
         {
-            return Account_permissionBLL._dal.Update(con, columnValue, iD
+            return Account_usergroupassignBLL._dal.Update(con, columnValue, iD
 #if !SP
                 , parameters
 #endif
             );
         }
         /// <summary>
-        /// 向数据表Account_permission更新记录
+        /// 向数据表Account_usergroupassign更新记录
         /// </summary>
         /// <param name="columnValue">UPDATE语句里SET内容</param>
         /// <param name="where">UPDATE语句里WHERE内容</param>
@@ -216,14 +213,14 @@ namespace SimpleLoginAuthorization.DB
         {
             if (string.IsNullOrEmpty(columnValue) || string.IsNullOrEmpty(where))
                 return -1;
-            return Account_permissionBLL._dal.UpdateWhere(columnValue, where
+            return Account_usergroupassignBLL._dal.UpdateWhere(columnValue, where
 #if !SP
                 , parameters
 #endif
             );
         }
         /// <summary>
-        /// 向数据表Account_permission更新记录，带事务
+        /// 向数据表Account_usergroupassign更新记录，带事务
         /// </summary>
         /// <param name="sp">事务对象</param>
         /// <param name="columnValue">UPDATE语句里SET内容</param>
@@ -242,14 +239,14 @@ namespace SimpleLoginAuthorization.DB
         {
             if (string.IsNullOrEmpty(columnValue) || string.IsNullOrEmpty(where))
                 return -1;
-            return Account_permissionBLL._dal.UpdateWhere(sp, columnValue, where
+            return Account_usergroupassignBLL._dal.UpdateWhere(sp, columnValue, where
 #if !SP
                 , parameters
 #endif
             );
         }
         /// <summary>
-        /// 向数据表Account_permission更新记录，带事务
+        /// 向数据表Account_usergroupassign更新记录，带事务
         /// </summary>
         /// <param name="con">连接对象</param>
         /// <param name="columnValue">UPDATE语句里SET内容</param>
@@ -268,7 +265,7 @@ namespace SimpleLoginAuthorization.DB
         {
             if (string.IsNullOrEmpty(columnValue) || string.IsNullOrEmpty(where))
                 return -1;
-            return Account_permissionBLL._dal.UpdateWhere(con, columnValue, where
+            return Account_usergroupassignBLL._dal.UpdateWhere(con, columnValue, where
 #if !SP
                 , parameters
 #endif
@@ -278,7 +275,7 @@ namespace SimpleLoginAuthorization.DB
 
         #region 删除
         /// <summary>
-        /// 删除数据表Account_permission中的一条记录
+        /// 删除数据表Account_usergroupassign中的一条记录
         /// </summary>
         /// <param name="iD">iD</param>
 #if SP
@@ -286,27 +283,27 @@ namespace SimpleLoginAuthorization.DB
 #else
         /// <returns>-1表示没有执行数据库操作；>0表示执行数据库操作成功；=0表示执行数据库操作失败</returns>
 #endif
-        public static int Delete(string iD)
+        public static int Delete(int iD)
         {
-            return Account_permissionBLL._dal.Delete(iD);
+            return Account_usergroupassignBLL._dal.Delete(iD);
         }
         /// <summary>
-        /// 删除数据表Account_permission中的一条记录
+        /// 删除数据表Account_usergroupassign中的一条记录
         /// </summary>
-        /// <param name="account_permission">account_permission实体对象</param>
+        /// <param name="account_usergroupassign">account_usergroupassign实体对象</param>
 #if SP
         /// <returns>-1表示没有执行数据库操作；=0表示执行数据库操作成功；其他值表示执行数据库操作失败</returns>
 #else
         /// <returns>-1表示没有执行数据库操作；>0表示执行数据库操作成功；=0表示执行数据库操作失败</returns>
 #endif
-        public static int Delete(Account_permission account_permission)
+        public static int Delete(Account_usergroupassign account_usergroupassign)
         {
-            if (account_permission == null)
+            if (account_usergroupassign == null)
                 return -1;
-            return Account_permissionBLL._dal.Delete(account_permission);
+            return Account_usergroupassignBLL._dal.Delete(account_usergroupassign);
         }
         /// <summary>
-        /// 删除数据表Account_permission中的一条记录,带事务
+        /// 删除数据表Account_usergroupassign中的一条记录,带事务
         /// </summary>
         /// <param name="sp">事务对象</param>
         /// <param name="ID">iD</param>
@@ -315,12 +312,12 @@ namespace SimpleLoginAuthorization.DB
 #else
         /// <returns>-1表示没有执行数据库操作；>0表示执行数据库操作成功；=0表示执行数据库操作失败</returns>
 #endif
-        public static int Delete(DbTransaction sp, string iD)
+        public static int Delete(DbTransaction sp, int iD)
         {
-            return Account_permissionBLL._dal.Delete(sp, iD);
+            return Account_usergroupassignBLL._dal.Delete(sp, iD);
         }
         /// <summary>
-        /// 删除数据表Account_permission中的一条记录,带事务
+        /// 删除数据表Account_usergroupassign中的一条记录,带事务
         /// </summary>
         /// <param name="con">连接对象</param>
         /// <param name="ID">iD</param>
@@ -329,44 +326,44 @@ namespace SimpleLoginAuthorization.DB
 #else
         /// <returns>-1表示没有执行数据库操作；>0表示执行数据库操作成功；=0表示执行数据库操作失败</returns>
 #endif
-        public static int Delete(DbConnection con, string iD)
+        public static int Delete(DbConnection con, int iD)
         {
-            return Account_permissionBLL._dal.Delete(con, iD);
+            return Account_usergroupassignBLL._dal.Delete(con, iD);
         }
         /// <summary>
-        /// 删除数据表Account_permission中的一条记录,带事务
+        /// 删除数据表Account_usergroupassign中的一条记录,带事务
         /// </summary>
         /// <param name="sp">事务对象</param>
-        /// <param name="account_permission">account_permission实体对象</param>
+        /// <param name="account_usergroupassign">account_usergroupassign实体对象</param>
 #if SP
         /// <returns>-1表示没有执行数据库操作；=0表示执行数据库操作成功；其他值表示执行数据库操作失败</returns>
 #else
         /// <returns>-1表示没有执行数据库操作；>0表示执行数据库操作成功；=0表示执行数据库操作失败</returns>
 #endif
-        public static int Delete(DbTransaction sp, Account_permission account_permission)
+        public static int Delete(DbTransaction sp, Account_usergroupassign account_usergroupassign)
         {
-            if (account_permission == null)
+            if (account_usergroupassign == null)
                 return -1;
-            return Account_permissionBLL._dal.Delete(sp, account_permission);
+            return Account_usergroupassignBLL._dal.Delete(sp, account_usergroupassign);
         }
         /// <summary>
-        /// 删除数据表Account_permission中的一条记录,带事务
+        /// 删除数据表Account_usergroupassign中的一条记录,带事务
         /// </summary>
         /// <param name="con">连接对象</param>
-        /// <param name="account_permission">account_permission实体对象</param>
+        /// <param name="account_usergroupassign">account_usergroupassign实体对象</param>
 #if SP
         /// <returns>-1表示没有执行数据库操作；=0表示执行数据库操作成功；其他值表示执行数据库操作失败</returns>
 #else
         /// <returns>-1表示没有执行数据库操作；>0表示执行数据库操作成功；=0表示执行数据库操作失败</returns>
 #endif
-        public static int Delete(DbConnection con, Account_permission account_permission)
+        public static int Delete(DbConnection con, Account_usergroupassign account_usergroupassign)
         {
-            if (account_permission == null)
+            if (account_usergroupassign == null)
                 return -1;
-            return Account_permissionBLL._dal.Delete(con, account_permission);
+            return Account_usergroupassignBLL._dal.Delete(con, account_usergroupassign);
         }
         /// <summary>
-        /// 删除数据表Account_permission中符合条件的记录
+        /// 删除数据表Account_usergroupassign中符合条件的记录
         /// </summary>
         /// <param name="where">删除的条件</param>
 #if SP
@@ -383,14 +380,14 @@ namespace SimpleLoginAuthorization.DB
         {
             if (string.IsNullOrEmpty(where))
                 return -1;
-            return Account_permissionBLL._dal.DeleteWhere(where
+            return Account_usergroupassignBLL._dal.DeleteWhere(where
 #if !SP
                 , parameters
 #endif
             );
         }
         /// <summary>
-        /// 删除数据表Account_permission中符合条件的记录
+        /// 删除数据表Account_usergroupassign中符合条件的记录
         /// </summary>
         /// <param name="sp">事务对象</param>
         /// <param name="where">删除的条件</param>
@@ -408,14 +405,14 @@ namespace SimpleLoginAuthorization.DB
         {
             if (string.IsNullOrEmpty(where))
                 return -1;
-            return Account_permissionBLL._dal.DeleteWhere(sp, where
+            return Account_usergroupassignBLL._dal.DeleteWhere(sp, where
 #if !SP
                 , parameters
 #endif
             );
         }
         /// <summary>
-        /// 删除数据表Account_permission中符合条件的记录
+        /// 删除数据表Account_usergroupassign中符合条件的记录
         /// </summary>
         /// <param name="con">连接对象</param>
         /// <param name="where">删除的条件</param>
@@ -433,7 +430,7 @@ namespace SimpleLoginAuthorization.DB
         {
             if (string.IsNullOrEmpty(where))
                 return -1;
-            return Account_permissionBLL._dal.DeleteWhere(con, where
+            return Account_usergroupassignBLL._dal.DeleteWhere(con, where
 #if !SP
                 , parameters
 #endif
@@ -443,86 +440,86 @@ namespace SimpleLoginAuthorization.DB
 
         #region 数据实体
         /// <summary>
-        /// 通过DataRow创建一个account_permission实体对象
+        /// 通过DataRow创建一个account_usergroupassign实体对象
         /// </summary>
         /// <param name="row">row</param>
-        /// <returns>Account_permission实体对象</returns>
-        public static Account_permission Select(DataRow row)
+        /// <returns>Account_usergroupassign实体对象</returns>
+        public static Account_usergroupassign Select(DataRow row)
         {
-            return Account_permissionBLL._dal.Select(row);
+            return Account_usergroupassignBLL._dal.Select(row);
         }
 
         /// <summary>
-        /// 通过DataReader创建一个account_permission实体对象
+        /// 通过DataReader创建一个account_usergroupassign实体对象
         /// </summary>
         /// <param name="dr">dr</param>
-        /// <returns>account_permission实体对象</returns>
-        public static Account_permission Select(IDataReader dr)
+        /// <returns>account_usergroupassign实体对象</returns>
+        public static Account_usergroupassign Select(IDataReader dr)
         {
-            return Account_permissionBLL._dal.Select(dr);
+            return Account_usergroupassignBLL._dal.Select(dr);
         }
         /// <summary>
-        /// 得到account_permission实体对象
+        /// 得到account_usergroupassign实体对象
         /// </summary>
         /// <param name="iD">iD</param>
-        /// <returns>account_permission实体对象</returns>
-        public static Account_permission Get(string iD)
+        /// <returns>account_usergroupassign实体对象</returns>
+        public static Account_usergroupassign Get(int iD)
         {
-            return Account_permissionBLL._dal.Get(iD);
+            return Account_usergroupassignBLL._dal.Get(iD);
         }
         /// <summary>
-        /// 得到account_permission实体对象
+        /// 得到account_usergroupassign实体对象
         /// </summary>
         /// <param name="con">连接对象</param>
         /// <param name="iD">iD</param>
-        /// <returns>account_permission实体对象</returns>
-        public static Account_permission Get(DbConnection con, string iD)
+        /// <returns>account_usergroupassign实体对象</returns>
+        public static Account_usergroupassign Get(DbConnection con, int iD)
         {
-            return Account_permissionBLL._dal.Get(con, iD);
+            return Account_usergroupassignBLL._dal.Get(con, iD);
         }
         /// <summary>
-        /// 根据ID,返回一个account_permission实体对象
+        /// 根据ID,返回一个account_usergroupassign实体对象
         /// </summary>
         /// <param name="iD">iD</param>
-        /// <param name="bParentTable">将account_permission实体对象设置是否与父表关联</param>
-        /// <param name="bChildrenTable">将account_permission实体对象设置是否与子表关联</param>
-        /// <returns>account_permission实体对象</returns>
-        public static Account_permission Get(string iD, bool bParentTable, bool bChildrenTable)
+        /// <param name="bParentTable">将account_usergroupassign实体对象设置是否与父表关联</param>
+        /// <param name="bChildrenTable">将account_usergroupassign实体对象设置是否与子表关联</param>
+        /// <returns>account_usergroupassign实体对象</returns>
+        public static Account_usergroupassign Get(int iD, bool bParentTable, bool bChildrenTable)
         {
-            return Account_permissionBLL._dal.Get(iD, bParentTable, bChildrenTable);
+            return Account_usergroupassignBLL._dal.Get(iD, bParentTable, bChildrenTable);
         }
         /// <summary>
-        /// 根据ID,返回一个account_permission实体对象
+        /// 根据ID,返回一个account_usergroupassign实体对象
         /// </summary>
         /// <param name="con">连接对象</param>
         /// <param name="iD">iD</param>
-        /// <param name="bParentTable">将account_permission实体对象设置是否与父表关联</param>
-        /// <param name="bChildrenTable">将account_permission实体对象设置是否与子表关联</param>
-        /// <returns>account_permission实体对象</returns>
-        public static Account_permission Get(DbConnection con, string iD, bool bParentTable, bool bChildrenTable)
+        /// <param name="bParentTable">将account_usergroupassign实体对象设置是否与父表关联</param>
+        /// <param name="bChildrenTable">将account_usergroupassign实体对象设置是否与子表关联</param>
+        /// <returns>account_usergroupassign实体对象</returns>
+        public static Account_usergroupassign Get(DbConnection con, int iD, bool bParentTable, bool bChildrenTable)
         {
-            return Account_permissionBLL._dal.Get(con, iD, bParentTable, bChildrenTable);
+            return Account_usergroupassignBLL._dal.Get(con, iD, bParentTable, bChildrenTable);
         }
         /// <summary>
-        /// 将account_permission对象设置与父表和子表关联
+        /// 将account_usergroupassign对象设置与父表和子表关联
         /// </summary>
-        /// <param name="obj">account_permission实体对象</param>
+        /// <param name="obj">account_usergroupassign实体对象</param>
         /// <param name="bParentTable">是/否设置与父表对象关联</param>
         /// <param name="bChildrenTable">是/否设置与子表对象关联</param>
-        public static void Get(Account_permission obj, bool bParentTable, bool bChildrenTable)
+        public static void Get(Account_usergroupassign obj, bool bParentTable, bool bChildrenTable)
         {
-            Account_permissionBLL._dal.Get(obj, bParentTable, bChildrenTable);
+            Account_usergroupassignBLL._dal.Get(obj, bParentTable, bChildrenTable);
         }
         /// <summary>
-		/// 将account_permission对象设置与父表和子表关联
+		/// 将account_usergroupassign对象设置与父表和子表关联
 		/// </summary>
 		/// <param name="con">连接对象</param>
-        /// <param name="obj">account_permission实体对象</param>
+        /// <param name="obj">account_usergroupassign实体对象</param>
 		/// <param name="bParentTable">是/否设置与父表对象关联</param>
 		/// <param name="bChildrenTable">是/否设置与子表对象关联</param>
-		public static void Get(DbConnection con, Account_permission obj, bool bParentTable, bool bChildrenTable)
+		public static void Get(DbConnection con, Account_usergroupassign obj, bool bParentTable, bool bChildrenTable)
         {
-            Account_permissionBLL._dal.Get(con, obj, bParentTable, bChildrenTable);
+            Account_usergroupassignBLL._dal.Get(con, obj, bParentTable, bChildrenTable);
         }
         #endregion
 
@@ -534,175 +531,175 @@ namespace SimpleLoginAuthorization.DB
 
         #region 查询
         /// <summary>
-        /// 得到数据表Account_permission所有记录
+        /// 得到数据表Account_usergroupassign所有记录
         /// </summary>
         /// <returns>结果集</returns>
-        public static List<Account_permission> Select()
+        public static List<Account_usergroupassign> Select()
         {
-            return Account_permissionBLL._dal.Select();
+            return Account_usergroupassignBLL._dal.Select();
         }
         /// <summary>
-		/// 得到数据表Account_permission所有记录
+		/// 得到数据表Account_usergroupassign所有记录
 		/// </summary>
 		/// <param name="con">连接对象</param>
         /// <returns>结果集</returns>
-		public static List<Account_permission> Select(DbConnection con)
+		public static List<Account_usergroupassign> Select(DbConnection con)
         {
-            return Account_permissionBLL._dal.Select(con);
+            return Account_usergroupassignBLL._dal.Select(con);
         }
         /// <summary>
-        /// 得到数据表Account_permission所有记录
+        /// 得到数据表Account_usergroupassign所有记录
         /// </summary>
         /// <param name="sortField">排序字段</param>
         /// <returns>结果集</returns>
-        public static List<Account_permission> Select(string sortField)
+        public static List<Account_usergroupassign> Select(string sortField)
         {
-            return Account_permissionBLL._dal.Select(sortField);
+            return Account_usergroupassignBLL._dal.Select(sortField);
         }
         /// <summary>
-        /// 得到数据表Account_permission所有记录
+        /// 得到数据表Account_usergroupassign所有记录
         /// </summary>
         /// <param name="con">连接对象</param>
         /// <param name="sortField">排序字段</param>
         /// <returns>结果集</returns>
-		public static List<Account_permission> Select(DbConnection con, string sortField)
+		public static List<Account_usergroupassign> Select(DbConnection con, string sortField)
         {
-            return Account_permissionBLL._dal.Select(con, sortField);
+            return Account_usergroupassignBLL._dal.Select(con, sortField);
         }
         /// <summary>
-        /// 得到数据表Account_permission所有记录
+        /// 得到数据表Account_usergroupassign所有记录
         /// </summary>
         /// <param name="bParentTable">是/否设置与父表对象关联</param>
         /// <param name="bChildrenTable">是/否设置与子表对象关联</param>
         /// <returns>结果集</returns>
-        public static List<Account_permission> Select(bool bParentTable, bool bChildrenTable)
+        public static List<Account_usergroupassign> Select(bool bParentTable, bool bChildrenTable)
         {
-            return Account_permissionBLL._dal.Select(bParentTable, bChildrenTable);
+            return Account_usergroupassignBLL._dal.Select(bParentTable, bChildrenTable);
         }
         /// <summary>
-		/// 得到数据表Account_permission所有记录
+		/// 得到数据表Account_usergroupassign所有记录
 		/// </summary>
 		/// <param name="con">连接对象</param>
         /// <param name="bParentTable">是/否设置与父表对象关联</param>
         /// <param name="bChildrenTable">是/否设置与子表对象关联</param>
 		/// <returns>结果集</returns>
-		public static List<Account_permission> Select(DbConnection con, bool bParentTable, bool bChildrenTable)
+		public static List<Account_usergroupassign> Select(DbConnection con, bool bParentTable, bool bChildrenTable)
         {
-            return Account_permissionBLL._dal.Select(con, bParentTable, bChildrenTable);
+            return Account_usergroupassignBLL._dal.Select(con, bParentTable, bChildrenTable);
         }
         /// <summary>
-        /// 得到数据表Account_permission所有记录
+        /// 得到数据表Account_usergroupassign所有记录
         /// </summary>
         /// <param name="sortField">排序字段</param>
         /// <param name="bParentTable">是/否设置与父表对象关联</param>
         /// <param name="bChildrenTable">是/否设置与子表对象关联</param>
         /// <returns>结果集</returns>
-        public static List<Account_permission> Select(string sortField, bool bParentTable, bool bChildrenTable)
+        public static List<Account_usergroupassign> Select(string sortField, bool bParentTable, bool bChildrenTable)
         {
-            return Account_permissionBLL._dal.Select(sortField, bParentTable, bChildrenTable);
+            return Account_usergroupassignBLL._dal.Select(sortField, bParentTable, bChildrenTable);
         }
         /// <summary>
-        /// 得到数据表Account_permission所有记录
+        /// 得到数据表Account_usergroupassign所有记录
         /// </summary>
         /// <param name="con">连接对象</param>
         /// <param name="sortField">排序字段</param>
         /// <param name="bParentTable">是/否设置与父表对象关联</param>
         /// <param name="bChildrenTable">是/否设置与子表对象关联</param>
         /// <returns>结果集</returns>
-		public static List<Account_permission> Select(DbConnection con, string sortField, bool bParentTable, bool bChildrenTable)
+		public static List<Account_usergroupassign> Select(DbConnection con, string sortField, bool bParentTable, bool bChildrenTable)
         {
-            return Account_permissionBLL._dal.Select(con, sortField, bParentTable, bChildrenTable);
+            return Account_usergroupassignBLL._dal.Select(con, sortField, bParentTable, bChildrenTable);
         }
         /// <summary>
-        /// 得到数据表Account_permission满足查询条件的记录
+        /// 得到数据表Account_usergroupassign满足查询条件的记录
         /// </summary>
         /// <param name="where">查询条件</param>
         /// <param name="sortField">排序字段</param>
         /// <returns>结果集</returns>
-        public static List<Account_permission> Select(string where, string sortField)
+        public static List<Account_usergroupassign> Select(string where, string sortField)
         {
-            return Account_permissionBLL._dal.Select(where, sortField);
+            return Account_usergroupassignBLL._dal.Select(where, sortField);
         }
         /// <summary>
-		/// 得到数据表Account_permission满足查询条件的记录
+		/// 得到数据表Account_usergroupassign满足查询条件的记录
 		/// </summary>
 		/// <param name="expression">查询条件</param>
 		/// <param name="sortField">排序字段</param>
 		/// <returns>结果集</returns>
-		public static List<Account_permission> Select(Expression<Func<Account_permission, bool>> expression, string sortField)
+		public static List<Account_usergroupassign> Select(Expression<Func<Account_usergroupassign, bool>> expression, string sortField)
         {
-            return Account_permissionBLL._dal.Select(expression, sortField);
+            return Account_usergroupassignBLL._dal.Select(expression, sortField);
         }
         /// <summary>
-		/// 得到数据表Account_permission满足查询条件的记录
+		/// 得到数据表Account_usergroupassign满足查询条件的记录
 		/// </summary>
 		/// <param name="con">连接对象</param>
         /// <param name="where">查询条件</param>
 		/// <param name="sortField">排序字段</param>
 		/// <returns>结果集</returns>
-		public static List<Account_permission> Select(DbConnection con, string where, string sortField)
+		public static List<Account_usergroupassign> Select(DbConnection con, string where, string sortField)
         {
-            return Account_permissionBLL._dal.Select(con, where, sortField);
+            return Account_usergroupassignBLL._dal.Select(con, where, sortField);
         }
         /// <summary>
-		/// 得到数据表Account_permission满足查询条件的记录
+		/// 得到数据表Account_usergroupassign满足查询条件的记录
 		/// </summary>
 		/// <param name="con">连接对象</param>
         /// <param name="expression">查询条件</param>
 		/// <param name="sortField">排序字段</param>
 		/// <returns>结果集</returns>
-		public static List<Account_permission> Select(DbConnection con, Expression<Func<Account_permission, bool>> expression, string sortField)
+		public static List<Account_usergroupassign> Select(DbConnection con, Expression<Func<Account_usergroupassign, bool>> expression, string sortField)
         {
-            return Account_permissionBLL._dal.Select(con, expression, sortField);
+            return Account_usergroupassignBLL._dal.Select(con, expression, sortField);
         }
         /// <summary>
-        /// 得到数据表Account_permission满足查询条件的头几条记录
+        /// 得到数据表Account_usergroupassign满足查询条件的头几条记录
         /// </summary>
         /// <param name="topCount">查询头几条记录</param>
         /// <param name="where">查询条件</param>
         /// <param name="sortField">排序字段</param>
         /// <returns>结果集</returns>
-        public static List<Account_permission> Select(int topCount, string where, string sortField)
+        public static List<Account_usergroupassign> Select(int topCount, string where, string sortField)
         {
-            return Account_permissionBLL._dal.Select(topCount, where, sortField);
+            return Account_usergroupassignBLL._dal.Select(topCount, where, sortField);
         }
         /// <summary>
-        /// 得到数据表Account_permission满足查询条件的头几条记录
+        /// 得到数据表Account_usergroupassign满足查询条件的头几条记录
         /// </summary>
 		/// <param name="topCount">查询头几条记录</param>
         /// <param name="expression">查询条件</param>
         /// <param name="sortField">排序字段</param>
         /// <returns>结果集</returns>
-		public static List<Account_permission> Select(int topCount, Expression<Func<Account_permission, bool>> expression, string sortField)
+		public static List<Account_usergroupassign> Select(int topCount, Expression<Func<Account_usergroupassign, bool>> expression, string sortField)
         {
-            return Account_permissionBLL._dal.Select(topCount, expression, sortField);
+            return Account_usergroupassignBLL._dal.Select(topCount, expression, sortField);
         }
         /// <summary>
-        /// 得到数据表Account_permission满足查询条件的头几条记录
+        /// 得到数据表Account_usergroupassign满足查询条件的头几条记录
         /// </summary>
 		/// <param name="con">连接对象</param>
         /// <param name="topCount">查询头几条记录</param>
         /// <param name="where">查询条件</param>
         /// <param name="sortField">排序字段</param>
         /// <returns>结果集</returns>
-		public static List<Account_permission> Select(DbConnection con, int topCount, string where, string sortField)
+		public static List<Account_usergroupassign> Select(DbConnection con, int topCount, string where, string sortField)
         {
-            return Account_permissionBLL._dal.Select(con, topCount, where, sortField);
+            return Account_usergroupassignBLL._dal.Select(con, topCount, where, sortField);
         }
         /// <summary>
-        /// 得到数据表Account_permission满足查询条件的头几条记录
+        /// 得到数据表Account_usergroupassign满足查询条件的头几条记录
         /// </summary>
 		/// <param name="con">连接对象</param>
         /// <param name="topCount">查询头几条记录</param>
         /// <param name="expression">查询条件</param>
         /// <param name="sortField">排序字段</param>
         /// <returns>结果集</returns>
-		public static List<Account_permission> Select(DbConnection con, int topCount, Expression<Func<Account_permission, bool>> expression, string sortField)
+		public static List<Account_usergroupassign> Select(DbConnection con, int topCount, Expression<Func<Account_usergroupassign, bool>> expression, string sortField)
         {
-            return Account_permissionBLL._dal.Select(con, topCount, expression, sortField);
+            return Account_usergroupassignBLL._dal.Select(con, topCount, expression, sortField);
         }
         /// <summary>
-        /// 得到数据表Account_permission满足查询条件的头几条记录
+        /// 得到数据表Account_usergroupassign满足查询条件的头几条记录
         /// </summary>
         /// <param name="topCount">查询头几条记录</param>
         /// <param name="where">查询条件</param>
@@ -710,12 +707,12 @@ namespace SimpleLoginAuthorization.DB
         /// <param name="bParentTable">是/否设置与父表对象关联</param>
         /// <param name="bChildrenTable">是/否设置与子表对象关联</param>
         /// <returns>结果集</returns>
-        public static List<Account_permission> Select(int topCount, string where, string sortField, bool bParentTable, bool bChildrenTable)
+        public static List<Account_usergroupassign> Select(int topCount, string where, string sortField, bool bParentTable, bool bChildrenTable)
         {
-            return Account_permissionBLL._dal.Select(topCount, where, sortField, bParentTable, bChildrenTable);
+            return Account_usergroupassignBLL._dal.Select(topCount, where, sortField, bParentTable, bChildrenTable);
         }
         /// <summary>
-        /// 得到数据表Account_permission满足查询条件的头几条记录
+        /// 得到数据表Account_usergroupassign满足查询条件的头几条记录
         /// </summary>
 		/// <param name="topCount">查询头几条记录</param>
         /// <param name="expression">查询条件</param>
@@ -723,12 +720,12 @@ namespace SimpleLoginAuthorization.DB
 		/// <param name="bParentTable">是/否设置与父表对象关联</param>
         /// <param name="bChildrenTable">是/否设置与子表对象关联</param>
         /// <returns>结果集</returns>
-		public static List<Account_permission> Select(int topCount, Expression<Func<Account_permission, bool>> expression, string sortField, bool bParentTable, bool bChildrenTable)
+		public static List<Account_usergroupassign> Select(int topCount, Expression<Func<Account_usergroupassign, bool>> expression, string sortField, bool bParentTable, bool bChildrenTable)
         {
-            return Account_permissionBLL._dal.Select(topCount, expression, sortField, bParentTable, bChildrenTable);
+            return Account_usergroupassignBLL._dal.Select(topCount, expression, sortField, bParentTable, bChildrenTable);
         }
         /// <summary>
-        /// 得到数据表Account_permission满足查询条件的头几条记录
+        /// 得到数据表Account_usergroupassign满足查询条件的头几条记录
         /// </summary>
 		/// <param name="con">连接对象</param>
         /// <param name="topCount">查询头几条记录</param>
@@ -737,12 +734,12 @@ namespace SimpleLoginAuthorization.DB
 		/// <param name="bParentTable">是/否设置与父表对象关联</param>
         /// <param name="bChildrenTable">是/否设置与子表对象关联</param>
         /// <returns>结果集</returns>
-		public static List<Account_permission> Select(DbConnection con, int topCount, string where, string sortField, bool bParentTable, bool bChildrenTable)
+		public static List<Account_usergroupassign> Select(DbConnection con, int topCount, string where, string sortField, bool bParentTable, bool bChildrenTable)
         {
-            return Account_permissionBLL._dal.Select(con, topCount, where, sortField, bParentTable, bChildrenTable);
+            return Account_usergroupassignBLL._dal.Select(con, topCount, where, sortField, bParentTable, bChildrenTable);
         }
         /// <summary>
-        /// 得到数据表Account_permission满足查询条件的头几条记录
+        /// 得到数据表Account_usergroupassign满足查询条件的头几条记录
         /// </summary>
 		/// <param name="con">连接对象</param>
         /// <param name="topCount">查询头几条记录</param>
@@ -751,36 +748,36 @@ namespace SimpleLoginAuthorization.DB
 		/// <param name="bParentTable">是/否设置与父表对象关联</param>
         /// <param name="bChildrenTable">是/否设置与子表对象关联</param>
         /// <returns>结果集</returns>
-		public static List<Account_permission> Select(DbConnection con, int topCount, Expression<Func<Account_permission, bool>> expression, string sortField, bool bParentTable, bool bChildrenTable)
+		public static List<Account_usergroupassign> Select(DbConnection con, int topCount, Expression<Func<Account_usergroupassign, bool>> expression, string sortField, bool bParentTable, bool bChildrenTable)
         {
-            return Account_permissionBLL._dal.Select(con, topCount, expression, sortField, bParentTable, bChildrenTable);
+            return Account_usergroupassignBLL._dal.Select(con, topCount, expression, sortField, bParentTable, bChildrenTable);
         }
         /// <summary>
-        /// 得到数据表Account_permission满足查询条件的记录
+        /// 得到数据表Account_usergroupassign满足查询条件的记录
         /// </summary>
         /// <param name="where">查询条件</param>
         /// <param name="sortField">排序字段</param>
         /// <param name="bParentTable">是/否设置与父表对象关联</param>
         /// <param name="bChildrenTable">是/否设置与子表对象关联</param>
         /// <returns>结果集</returns>
-        public static List<Account_permission> Select(string where, string sortField, bool bParentTable, bool bChildrenTable)
+        public static List<Account_usergroupassign> Select(string where, string sortField, bool bParentTable, bool bChildrenTable)
         {
-            return Account_permissionBLL._dal.Select(where, sortField, bParentTable, bChildrenTable);
+            return Account_usergroupassignBLL._dal.Select(where, sortField, bParentTable, bChildrenTable);
         }
         /// <summary>
-		/// 得到数据表Account_permission满足查询条件的记录
+		/// 得到数据表Account_usergroupassign满足查询条件的记录
 		/// </summary>
 		/// <param name="expression">查询条件</param>
 		/// <param name="sortField">排序字段</param>
 		/// <param name="bParentTable">是/否设置与父表对象关联</param>
         /// <param name="bChildrenTable">是/否设置与子表对象关联</param>
 		/// <returns>结果集</returns>
-		public static List<Account_permission> Select(Expression<Func<Account_permission, bool>> expression, string sortField, bool bParentTable, bool bChildrenTable)
+		public static List<Account_usergroupassign> Select(Expression<Func<Account_usergroupassign, bool>> expression, string sortField, bool bParentTable, bool bChildrenTable)
         {
-            return Account_permissionBLL._dal.Select(expression, sortField, bParentTable, bChildrenTable);
+            return Account_usergroupassignBLL._dal.Select(expression, sortField, bParentTable, bChildrenTable);
         }
         /// <summary>
-		/// 得到数据表Account_permission满足查询条件的记录
+		/// 得到数据表Account_usergroupassign满足查询条件的记录
 		/// </summary>
 		/// <param name="con">连接对象</param>
         /// <param name="where">查询条件</param>
@@ -788,12 +785,12 @@ namespace SimpleLoginAuthorization.DB
 		/// <param name="bParentTable">是/否设置与父表对象关联</param>
         /// <param name="bChildrenTable">是/否设置与子表对象关联</param>
 		/// <returns>结果集</returns>
-		public static List<Account_permission> Select(DbConnection con, string where, string sortField, bool bParentTable, bool bChildrenTable)
+		public static List<Account_usergroupassign> Select(DbConnection con, string where, string sortField, bool bParentTable, bool bChildrenTable)
         {
-            return Account_permissionBLL._dal.Select(con, where, sortField, bParentTable, bChildrenTable);
+            return Account_usergroupassignBLL._dal.Select(con, where, sortField, bParentTable, bChildrenTable);
         }
         /// <summary>
-		/// 得到数据表Account_permission满足查询条件的记录
+		/// 得到数据表Account_usergroupassign满足查询条件的记录
 		/// </summary>
 		/// <param name="con">连接对象</param>
         /// <param name="expression">查询条件</param>
@@ -801,23 +798,23 @@ namespace SimpleLoginAuthorization.DB
 		/// <param name="bParentTable">是/否设置与父表对象关联</param>
         /// <param name="bChildrenTable">是/否设置与子表对象关联</param>
 		/// <returns>结果集</returns>
-		public static List<Account_permission> Select(DbConnection con, Expression<Func<Account_permission, bool>> expression, string sortField, bool bParentTable, bool bChildrenTable)
+		public static List<Account_usergroupassign> Select(DbConnection con, Expression<Func<Account_usergroupassign, bool>> expression, string sortField, bool bParentTable, bool bChildrenTable)
         {
-            return Account_permissionBLL._dal.Select(con, expression, sortField, bParentTable, bChildrenTable);
+            return Account_usergroupassignBLL._dal.Select(con, expression, sortField, bParentTable, bChildrenTable);
         }
         /// <summary>
-        /// 得到数据表Account_permission满足外键字段查询条件的记录
+        /// 得到数据表Account_usergroupassign满足外键字段查询条件的记录
         /// </summary>
         /// <param name="foreignFieldName">外键字段名称</param>
         /// <param name="foreignFieldValue">外键字段值</param>
         /// <returns>结果集</returns>
-        /// public static List< Account_permission > Select(string foreignFieldName, string foreignFieldValue)
+        /// public static List< Account_usergroupassign > Select(string foreignFieldName, int foreignFieldValue)
         /// {
-        ///     return Account_permissionBLL._dal.Select(foreignFieldName, foreignFieldValue);
+        ///     return Account_usergroupassignBLL._dal.Select(foreignFieldName, foreignFieldValue);
         /// }
 
         /// <summary>
-        /// 得到数据表Account_permission满足外键字段查询条件的记录
+        /// 得到数据表Account_usergroupassign满足外键字段查询条件的记录
         /// </summary>
         /// <param name="foreignFieldName">外键字段名称</param>
         /// <param name="foreignFieldValue">外键字段值</param>
@@ -825,12 +822,12 @@ namespace SimpleLoginAuthorization.DB
         /// <param name="bParentTable">是/否设置与父表对象关联</param>
         /// <param name="bChildrenTable">是/否设置与子表对象关联</param>
         /// <returns>结果集</returns>
-        public static List<Account_permission> Select(string foreignFieldName, string foreignFieldValue, string sortField, bool bParentTable, bool bChildrenTable)
+        public static List<Account_usergroupassign> Select(string foreignFieldName, int foreignFieldValue, string sortField, bool bParentTable, bool bChildrenTable)
         {
-            return Account_permissionBLL._dal.Select(foreignFieldName, foreignFieldValue, sortField, bParentTable, bChildrenTable);
+            return Account_usergroupassignBLL._dal.Select(foreignFieldName, foreignFieldValue, sortField, bParentTable, bChildrenTable);
         }
         /// <summary>
-        /// 得到数据表Account_permission满足外键字段查询条件的记录
+        /// 得到数据表Account_usergroupassign满足外键字段查询条件的记录
         /// </summary>
         /// <param name="con">连接对象</param>
         /// <param name="foreignFieldName">外键字段名称</param>
@@ -839,129 +836,129 @@ namespace SimpleLoginAuthorization.DB
         /// <param name="bParentTable">是/否设置与父表对象关联</param>
         /// <param name="bChildrenTable">是/否设置与子表对象关联</param>
         /// <returns>结果集</returns>
-        public static List<Account_permission> Select(DbConnection con, string foreignFieldName, string foreignFieldValue, string sortField, bool bParentTable, bool bChildrenTable)
+        public static List<Account_usergroupassign> Select(DbConnection con, string foreignFieldName, int foreignFieldValue, string sortField, bool bParentTable, bool bChildrenTable)
         {
-            return Account_permissionBLL._dal.Select(con, foreignFieldName, foreignFieldValue, sortField, bParentTable, bChildrenTable);
+            return Account_usergroupassignBLL._dal.Select(con, foreignFieldName, foreignFieldValue, sortField, bParentTable, bChildrenTable);
         }
         /// <summary>
-        /// 得到数据表Account_permission满足查询条件的记录数
+        /// 得到数据表Account_usergroupassign满足查询条件的记录数
         /// </summary>
         /// <param name="where">查询条件</param>
         /// <param name="recordCount">记录数</param>
         public static void Select(string where, out int recordCount)
         {
-            Account_permissionBLL._dal.Select(where, out recordCount);
+            Account_usergroupassignBLL._dal.Select(where, out recordCount);
         }
         /// <summary>
-		/// 得到数据表Account_permission满足查询条件的记录数
+		/// 得到数据表Account_usergroupassign满足查询条件的记录数
 		/// </summary>
 		/// <param name="expression">查询条件</param>
 		/// <param name="recordCount">记录数</param>
-		public static void Select(Expression<Func<Account_permission, bool>> expression, out int recordCount)
+		public static void Select(Expression<Func<Account_usergroupassign, bool>> expression, out int recordCount)
         {
-            Account_permissionBLL._dal.Select(expression, out recordCount);
+            Account_usergroupassignBLL._dal.Select(expression, out recordCount);
         }
         /// <summary>
-		/// 得到数据表Account_permission满足查询条件的记录数
+		/// 得到数据表Account_usergroupassign满足查询条件的记录数
 		/// </summary>
 		/// <param name="con">连接对象</param>
         /// <param name="where">查询条件</param>
 		/// <param name="recordCount">记录数</param>
 		public static void Select(DbConnection con, string where, out int recordCount)
         {
-            Account_permissionBLL._dal.Select(con, where, out recordCount);
+            Account_usergroupassignBLL._dal.Select(con, where, out recordCount);
         }
         /// <summary>
-		/// 得到数据表Account_permission满足查询条件的记录数
+		/// 得到数据表Account_usergroupassign满足查询条件的记录数
 		/// </summary>
 		/// <param name="con">连接对象</param>
         /// <param name="expression">查询条件</param>
 		/// <param name="recordCount">记录数</param>
-		public static void Select(DbConnection con, Expression<Func<Account_permission, bool>> expression, out int recordCount)
+		public static void Select(DbConnection con, Expression<Func<Account_usergroupassign, bool>> expression, out int recordCount)
         {
-            Account_permissionBLL._dal.Select(con, expression, out recordCount);
+            Account_usergroupassignBLL._dal.Select(con, expression, out recordCount);
         }
         /// <summary>
-        /// 得到数据表Account_permission满足查询条件的分页记录
+        /// 得到数据表Account_usergroupassign满足查询条件的分页记录
         /// </summary>
         /// <param name="pageSize">每页显示记录数</param>
         /// <param name="pageIndex">当前显示第几页</param>
         /// <returns>结果集</returns>
-        public static List<Account_permission> Select(int pageSize, int pageIndex)
+        public static List<Account_usergroupassign> Select(int pageSize, int pageIndex)
         {
-            return Account_permissionBLL._dal.Select(pageSize, pageIndex);
+            return Account_usergroupassignBLL._dal.Select(pageSize, pageIndex);
         }
         /// <summary>
-		/// 得到数据表Account_permission满足查询条件的分页记录
+		/// 得到数据表Account_usergroupassign满足查询条件的分页记录
 		/// </summary>
 		/// <param name="con">连接对象</param>
         /// <param name="pageSize">每页显示记录数</param>
 		/// <param name="pageIndex">当前显示第几页</param>
 		/// <returns>结果集</returns>
-		public static List<Account_permission> Select(DbConnection con, int pageSize, int pageIndex)
+		public static List<Account_usergroupassign> Select(DbConnection con, int pageSize, int pageIndex)
         {
-            return Account_permissionBLL._dal.Select(con, pageSize, pageIndex);
+            return Account_usergroupassignBLL._dal.Select(con, pageSize, pageIndex);
         }
         /// <summary>
-        /// 得到数据表Account_permission满足查询条件的分页记录
+        /// 得到数据表Account_usergroupassign满足查询条件的分页记录
         /// </summary>
         /// <param name="pageSize">每页显示记录数</param>
         /// <param name="pageIndex">当前显示第几页</param>
         /// <param name="where">查询条件</param>
         /// <returns>结果集</returns>
-        public static List<Account_permission> Select(int pageSize, int pageIndex, string where)
+        public static List<Account_usergroupassign> Select(int pageSize, int pageIndex, string where)
         {
-            return Account_permissionBLL._dal.Select(pageSize, pageIndex, where);
+            return Account_usergroupassignBLL._dal.Select(pageSize, pageIndex, where);
         }
         /// <summary>
-		/// 得到数据表Account_permission满足查询条件的分页记录
+		/// 得到数据表Account_usergroupassign满足查询条件的分页记录
 		/// </summary>
 		/// <param name="pageSize">每页显示记录数</param>
 		/// <param name="pageIndex">当前显示第几页</param>
 		/// <param name="expression">查询条件</param>
 		/// <returns>结果集</returns>
-		public static List<Account_permission> Select(int pageSize, int pageIndex, Expression<Func<Account_permission, bool>> expression)
+		public static List<Account_usergroupassign> Select(int pageSize, int pageIndex, Expression<Func<Account_usergroupassign, bool>> expression)
         {
-            return Account_permissionBLL._dal.Select(pageSize, pageIndex, expression);
+            return Account_usergroupassignBLL._dal.Select(pageSize, pageIndex, expression);
         }
         /// <summary>
-		/// 得到数据表Account_permission满足查询条件的分页记录
+		/// 得到数据表Account_usergroupassign满足查询条件的分页记录
 		/// </summary>
 		/// <param name="con">连接对象</param>
         /// <param name="pageSize">每页显示记录数</param>
 		/// <param name="pageIndex">当前显示第几页</param>
 		/// <param name="where">查询条件</param>
 		/// <returns>结果集</returns>
-		public static List<Account_permission> Select(DbConnection con, int pageSize, int pageIndex, string where)
+		public static List<Account_usergroupassign> Select(DbConnection con, int pageSize, int pageIndex, string where)
         {
-            return Account_permissionBLL._dal.Select(con, pageSize, pageIndex, where);
+            return Account_usergroupassignBLL._dal.Select(con, pageSize, pageIndex, where);
         }
         /// <summary>
-		/// 得到数据表Account_permission满足查询条件的分页记录
+		/// 得到数据表Account_usergroupassign满足查询条件的分页记录
 		/// </summary>
 		/// <param name="con">连接对象</param>
         /// <param name="pageSize">每页显示记录数</param>
 		/// <param name="pageIndex">当前显示第几页</param>
 		/// <param name="expression">查询条件</param>
 		/// <returns>结果集</returns>
-		public static List<Account_permission> Select(DbConnection con, int pageSize, int pageIndex, Expression<Func<Account_permission, bool>> expression)
+		public static List<Account_usergroupassign> Select(DbConnection con, int pageSize, int pageIndex, Expression<Func<Account_usergroupassign, bool>> expression)
         {
-            return Account_permissionBLL._dal.Select(con, pageSize, pageIndex, expression);
+            return Account_usergroupassignBLL._dal.Select(con, pageSize, pageIndex, expression);
         }
         /// <summary>
-        /// 得到数据表Account_permission满足查询条件的分页记录
+        /// 得到数据表Account_usergroupassign满足查询条件的分页记录
         /// </summary>
         /// <param name="pageSize">每页显示记录数</param>
         /// <param name="pageIndex">当前显示第几页</param>
         /// <param name="bParentTable">是/否设置与父表对象关联</param>
         /// <param name="bChildrenTable">是/否设置与子表对象关联</param>
         /// <returns>结果集</returns>
-        public static List<Account_permission> Select(int pageSize, int pageIndex, bool bParentTable, bool bChildrenTable)
+        public static List<Account_usergroupassign> Select(int pageSize, int pageIndex, bool bParentTable, bool bChildrenTable)
         {
-            return Account_permissionBLL._dal.Select(pageSize, pageIndex, bParentTable, bChildrenTable);
+            return Account_usergroupassignBLL._dal.Select(pageSize, pageIndex, bParentTable, bChildrenTable);
         }
         /// <summary>
-		/// 得到数据表Account_permission满足查询条件的分页记录
+		/// 得到数据表Account_usergroupassign满足查询条件的分页记录
 		/// </summary>
 		/// <param name="con">连接对象</param>
         /// <param name="pageSize">每页显示记录数</param>
@@ -969,12 +966,12 @@ namespace SimpleLoginAuthorization.DB
 		/// <param name="bParentTable">是/否设置与父表对象关联</param>
         /// <param name="bChildrenTable">是/否设置与子表对象关联</param>
 		/// <returns>结果集</returns>
-		public static List<Account_permission> Select(DbConnection con, int pageSize, int pageIndex, bool bParentTable, bool bChildrenTable)
+		public static List<Account_usergroupassign> Select(DbConnection con, int pageSize, int pageIndex, bool bParentTable, bool bChildrenTable)
         {
-            return Account_permissionBLL._dal.Select(con, pageSize, pageIndex, bParentTable, bChildrenTable);
+            return Account_usergroupassignBLL._dal.Select(con, pageSize, pageIndex, bParentTable, bChildrenTable);
         }
         /// <summary>
-        /// 得到数据表Account_permission满足查询条件的分页记录
+        /// 得到数据表Account_usergroupassign满足查询条件的分页记录
         /// </summary>
         /// <param name="pageSize">每页显示记录数</param>
         /// <param name="pageIndex">当前显示第几页</param>
@@ -982,12 +979,12 @@ namespace SimpleLoginAuthorization.DB
         /// <param name="bParentTable">是/否设置与父表对象关联</param>
         /// <param name="bChildrenTable">是/否设置与子表对象关联</param>
         /// <returns>结果集</returns>
-        public static List<Account_permission> Select(int pageSize, int pageIndex, string where, bool bParentTable, bool bChildrenTable)
+        public static List<Account_usergroupassign> Select(int pageSize, int pageIndex, string where, bool bParentTable, bool bChildrenTable)
         {
-            return Account_permissionBLL._dal.Select(pageSize, pageIndex, where, bParentTable, bChildrenTable);
+            return Account_usergroupassignBLL._dal.Select(pageSize, pageIndex, where, bParentTable, bChildrenTable);
         }
         /// <summary>
-		/// 得到数据表Account_permission满足查询条件的分页记录
+		/// 得到数据表Account_usergroupassign满足查询条件的分页记录
 		/// </summary>
 		/// <param name="pageSize">每页显示记录数</param>
 		/// <param name="pageIndex">当前显示第几页</param>
@@ -995,12 +992,12 @@ namespace SimpleLoginAuthorization.DB
 		/// <param name="bParentTable">是/否设置与父表对象关联</param>
         /// <param name="bChildrenTable">是/否设置与子表对象关联</param>
 		/// <returns>结果集</returns>
-		public static List<Account_permission> Select(int pageSize, int pageIndex, Expression<Func<Account_permission, bool>> expression, bool bParentTable, bool bChildrenTable)
+		public static List<Account_usergroupassign> Select(int pageSize, int pageIndex, Expression<Func<Account_usergroupassign, bool>> expression, bool bParentTable, bool bChildrenTable)
         {
-            return Account_permissionBLL._dal.Select(pageSize, pageIndex, expression, bParentTable, bChildrenTable);
+            return Account_usergroupassignBLL._dal.Select(pageSize, pageIndex, expression, bParentTable, bChildrenTable);
         }
         /// <summary>
-		/// 得到数据表Account_permission满足查询条件的分页记录
+		/// 得到数据表Account_usergroupassign满足查询条件的分页记录
 		/// </summary>
 		/// <param name="con">连接对象</param>
         /// <param name="pageSize">每页显示记录数</param>
@@ -1009,12 +1006,12 @@ namespace SimpleLoginAuthorization.DB
 		/// <param name="bParentTable">是/否设置与父表对象关联</param>
         /// <param name="bChildrenTable">是/否设置与子表对象关联</param>
 		/// <returns>结果集</returns>
-		public static List<Account_permission> Select(DbConnection con, int pageSize, int pageIndex, string where, bool bParentTable, bool bChildrenTable)
+		public static List<Account_usergroupassign> Select(DbConnection con, int pageSize, int pageIndex, string where, bool bParentTable, bool bChildrenTable)
         {
-            return Account_permissionBLL._dal.Select(con, pageSize, pageIndex, where, bParentTable, bChildrenTable);
+            return Account_usergroupassignBLL._dal.Select(con, pageSize, pageIndex, where, bParentTable, bChildrenTable);
         }
         /// <summary>
-		/// 得到数据表Account_permission满足查询条件的分页记录
+		/// 得到数据表Account_usergroupassign满足查询条件的分页记录
 		/// </summary>
 		/// <param name="con">连接对象</param>
         /// <param name="pageSize">每页显示记录数</param>
@@ -1023,12 +1020,12 @@ namespace SimpleLoginAuthorization.DB
 		/// <param name="bParentTable">是/否设置与父表对象关联</param>
         /// <param name="bChildrenTable">是/否设置与子表对象关联</param>
 		/// <returns>结果集</returns>
-		public static List<Account_permission> Select(DbConnection con, int pageSize, int pageIndex, Expression<Func<Account_permission, bool>> expression, bool bParentTable, bool bChildrenTable)
+		public static List<Account_usergroupassign> Select(DbConnection con, int pageSize, int pageIndex, Expression<Func<Account_usergroupassign, bool>> expression, bool bParentTable, bool bChildrenTable)
         {
-            return Account_permissionBLL._dal.Select(con, pageSize, pageIndex, expression, bParentTable, bChildrenTable);
+            return Account_usergroupassignBLL._dal.Select(con, pageSize, pageIndex, expression, bParentTable, bChildrenTable);
         }
         /// <summary>
-        /// 得到数据表Account_permission满足查询条件的分页记录
+        /// 得到数据表Account_usergroupassign满足查询条件的分页记录
         /// </summary>
         /// <param name="pageSize">每页显示记录数</param>
         /// <param name="pageIndex">当前显示第几页</param>
@@ -1037,12 +1034,12 @@ namespace SimpleLoginAuthorization.DB
         /// <param name="bParentTable">是/否设置与父表对象关联</param>
         /// <param name="bChildrenTable">是/否设置与子表对象关联</param>
         /// <returns>结果集</returns>
-        public static List<Account_permission> Select(int pageSize, int pageIndex, string where, string sortField, bool bParentTable, bool bChildrenTable)
+        public static List<Account_usergroupassign> Select(int pageSize, int pageIndex, string where, string sortField, bool bParentTable, bool bChildrenTable)
         {
-            return Account_permissionBLL._dal.Select(pageSize, pageIndex, where, sortField, bParentTable, bChildrenTable);
+            return Account_usergroupassignBLL._dal.Select(pageSize, pageIndex, where, sortField, bParentTable, bChildrenTable);
         }
         /// <summary>
-		/// 得到数据表Account_permission满足查询条件的分页记录
+		/// 得到数据表Account_usergroupassign满足查询条件的分页记录
 		/// </summary>
 		/// <param name="pageSize">每页显示记录数</param>
 		/// <param name="pageIndex">当前显示第几页</param>
@@ -1051,12 +1048,12 @@ namespace SimpleLoginAuthorization.DB
 		/// <param name="bParentTable">是/否设置与父表对象关联</param>
         /// <param name="bChildrenTable">是/否设置与子表对象关联</param>
 		/// <returns>结果集</returns>
-		public static List<Account_permission> Select(int pageSize, int pageIndex, Expression<Func<Account_permission, bool>> expression, string sortField, bool bParentTable, bool bChildrenTable)
+		public static List<Account_usergroupassign> Select(int pageSize, int pageIndex, Expression<Func<Account_usergroupassign, bool>> expression, string sortField, bool bParentTable, bool bChildrenTable)
         {
-            return Account_permissionBLL._dal.Select(pageSize, pageIndex, expression, sortField, bParentTable, bChildrenTable);
+            return Account_usergroupassignBLL._dal.Select(pageSize, pageIndex, expression, sortField, bParentTable, bChildrenTable);
         }
         /// <summary>
-		/// 得到数据表Account_permission满足查询条件的分页记录
+		/// 得到数据表Account_usergroupassign满足查询条件的分页记录
 		/// </summary>
 		/// <param name="con">连接对象</param>
         /// <param name="pageSize">每页显示记录数</param>
@@ -1066,12 +1063,12 @@ namespace SimpleLoginAuthorization.DB
 		/// <param name="bParentTable">是/否设置与父表对象关联</param>
         /// <param name="bChildrenTable">是/否设置与子表对象关联</param>
 		/// <returns>结果集</returns>
-		public static List<Account_permission> Select(DbConnection con, int pageSize, int pageIndex, string where, string sortField, bool bParentTable, bool bChildrenTable)
+		public static List<Account_usergroupassign> Select(DbConnection con, int pageSize, int pageIndex, string where, string sortField, bool bParentTable, bool bChildrenTable)
         {
-            return Account_permissionBLL._dal.Select(con, pageSize, pageIndex, where, sortField, bParentTable, bChildrenTable);
+            return Account_usergroupassignBLL._dal.Select(con, pageSize, pageIndex, where, sortField, bParentTable, bChildrenTable);
         }
         /// <summary>
-		/// 得到数据表Account_permission满足查询条件的分页记录
+		/// 得到数据表Account_usergroupassign满足查询条件的分页记录
 		/// </summary>
 		/// <param name="con">连接对象</param>
         /// <param name="pageSize">每页显示记录数</param>
@@ -1081,12 +1078,12 @@ namespace SimpleLoginAuthorization.DB
 		/// <param name="bParentTable">是/否设置与父表对象关联</param>
         /// <param name="bChildrenTable">是/否设置与子表对象关联</param>
 		/// <returns>结果集</returns>
-		public static List<Account_permission> Select(DbConnection con, int pageSize, int pageIndex, Expression<Func<Account_permission, bool>> expression, string sortField, bool bParentTable, bool bChildrenTable)
+		public static List<Account_usergroupassign> Select(DbConnection con, int pageSize, int pageIndex, Expression<Func<Account_usergroupassign, bool>> expression, string sortField, bool bParentTable, bool bChildrenTable)
         {
-            return Account_permissionBLL._dal.Select(con, pageSize, pageIndex, expression, sortField, bParentTable, bChildrenTable);
+            return Account_usergroupassignBLL._dal.Select(con, pageSize, pageIndex, expression, sortField, bParentTable, bChildrenTable);
         }
         /// <summary>
-		/// 得到数据表Account_permission满足查询条件的分页记录
+		/// 得到数据表Account_usergroupassign满足查询条件的分页记录
 		/// </summary>
 		/// <param name="pageSize">每页显示记录数</param>
 		/// <param name="pageIndex">当前显示第几页</param>
@@ -1094,12 +1091,12 @@ namespace SimpleLoginAuthorization.DB
 		/// <param name="sortField">排序字段</param>
         /// <param name="recordCount">返回查询记录数</param>
 		/// <returns>结果集</returns>
-        public static List<Account_permission> Select(int pageSize, int pageIndex, string where, string sortField, out int recordCount)
+        public static List<Account_usergroupassign> Select(int pageSize, int pageIndex, string where, string sortField, out int recordCount)
         {
-            return Account_permissionBLL._dal.Select(pageSize, pageIndex, where, sortField, false, false, out recordCount);
+            return Account_usergroupassignBLL._dal.Select(pageSize, pageIndex, where, sortField, false, false, out recordCount);
         }
         /// <summary>
-		/// 得到数据表Account_permission满足查询条件的分页记录
+		/// 得到数据表Account_usergroupassign满足查询条件的分页记录
 		/// </summary>
 		/// <param name="pageSize">每页显示记录数</param>
 		/// <param name="pageIndex">当前显示第几页</param>
@@ -1107,12 +1104,12 @@ namespace SimpleLoginAuthorization.DB
 		/// <param name="sortField">排序字段</param>
         /// <param name="recordCount">返回查询记录数</param>
 		/// <returns>结果集</returns>
-        public static List<Account_permission> Select(int pageSize, int pageIndex, Expression<Func<Account_permission, bool>> expression, string sortField, out int recordCount)
+        public static List<Account_usergroupassign> Select(int pageSize, int pageIndex, Expression<Func<Account_usergroupassign, bool>> expression, string sortField, out int recordCount)
         {
-            return Account_permissionBLL._dal.Select(pageSize, pageIndex, expression, sortField, false, false, out recordCount);
+            return Account_usergroupassignBLL._dal.Select(pageSize, pageIndex, expression, sortField, false, false, out recordCount);
         }
         /// <summary>
-		/// 得到数据表Account_permission满足查询条件的分页记录
+		/// 得到数据表Account_usergroupassign满足查询条件的分页记录
 		/// </summary>
 		/// <param name="con">连接对象</param>
         /// <param name="pageSize">每页显示记录数</param>
@@ -1121,12 +1118,12 @@ namespace SimpleLoginAuthorization.DB
 		/// <param name="sortField">排序字段</param>
         /// <param name="recordCount">返回查询记录数</param>
 		/// <returns>结果集</returns>
-        public static List<Account_permission> Select(DbConnection con, int pageSize, int pageIndex, string where, string sortField, out int recordCount)
+        public static List<Account_usergroupassign> Select(DbConnection con, int pageSize, int pageIndex, string where, string sortField, out int recordCount)
         {
-            return Account_permissionBLL._dal.Select(con, pageSize, pageIndex, where, sortField, false, false, out recordCount);
+            return Account_usergroupassignBLL._dal.Select(con, pageSize, pageIndex, where, sortField, false, false, out recordCount);
         }
         /// <summary>
-		/// 得到数据表Account_permission满足查询条件的分页记录
+		/// 得到数据表Account_usergroupassign满足查询条件的分页记录
 		/// </summary>
 		/// <param name="con">连接对象</param>
         /// <param name="pageSize">每页显示记录数</param>
@@ -1135,12 +1132,12 @@ namespace SimpleLoginAuthorization.DB
 		/// <param name="sortField">排序字段</param>
         /// <param name="recordCount">返回查询记录数</param>
 		/// <returns>结果集</returns>
-        public static List<Account_permission> Select(DbConnection con, int pageSize, int pageIndex, Expression<Func<Account_permission, bool>> expression, string sortField, out int recordCount)
+        public static List<Account_usergroupassign> Select(DbConnection con, int pageSize, int pageIndex, Expression<Func<Account_usergroupassign, bool>> expression, string sortField, out int recordCount)
         {
-            return Account_permissionBLL._dal.Select(con, pageSize, pageIndex, expression, sortField, false, false, out recordCount);
+            return Account_usergroupassignBLL._dal.Select(con, pageSize, pageIndex, expression, sortField, false, false, out recordCount);
         }
         /// <summary>
-		/// 得到数据表Account_permission满足查询条件的分页记录
+		/// 得到数据表Account_usergroupassign满足查询条件的分页记录
 		/// </summary>
         /// <param name="pageSize">每页显示记录数</param>
 		/// <param name="pageIndex">当前显示第几页</param>
@@ -1150,12 +1147,12 @@ namespace SimpleLoginAuthorization.DB
         /// <param name="bChildrenTable">是/否设置与子表对象关联</param>
         /// <param name="recordCount">返回查询记录数</param>
 		/// <returns>结果集</returns>
-        public static List<Account_permission> Select(int pageSize, int pageIndex, string where, string sortField, bool bParentTable, bool bChildrenTable, out int recordCount)
+        public static List<Account_usergroupassign> Select(int pageSize, int pageIndex, string where, string sortField, bool bParentTable, bool bChildrenTable, out int recordCount)
         {
-            return Account_permissionBLL._dal.Select(pageSize, pageIndex, where, sortField, bParentTable, bChildrenTable, out recordCount);
+            return Account_usergroupassignBLL._dal.Select(pageSize, pageIndex, where, sortField, bParentTable, bChildrenTable, out recordCount);
         }
         /// <summary>
-		/// 得到数据表Account_permission满足查询条件的分页记录
+		/// 得到数据表Account_usergroupassign满足查询条件的分页记录
 		/// </summary>
         /// <param name="pageSize">每页显示记录数</param>
 		/// <param name="pageIndex">当前显示第几页</param>
@@ -1165,12 +1162,12 @@ namespace SimpleLoginAuthorization.DB
         /// <param name="bChildrenTable">是/否设置与子表对象关联</param>
         /// <param name="recordCount">返回查询记录数</param>
 		/// <returns>结果集</returns>
-        public static List<Account_permission> Select(int pageSize, int pageIndex, Expression<Func<Account_permission, bool>> expression, string sortField, bool bParentTable, bool bChildrenTable, out int recordCount)
+        public static List<Account_usergroupassign> Select(int pageSize, int pageIndex, Expression<Func<Account_usergroupassign, bool>> expression, string sortField, bool bParentTable, bool bChildrenTable, out int recordCount)
         {
-            return Account_permissionBLL._dal.Select(pageSize, pageIndex, expression, sortField, bParentTable, bChildrenTable, out recordCount);
+            return Account_usergroupassignBLL._dal.Select(pageSize, pageIndex, expression, sortField, bParentTable, bChildrenTable, out recordCount);
         }
         /// <summary>
-		/// 得到数据表Account_permission满足查询条件的分页记录
+		/// 得到数据表Account_usergroupassign满足查询条件的分页记录
 		/// </summary>
 		/// <param name="con">连接对象</param>
         /// <param name="pageSize">每页显示记录数</param>
@@ -1181,12 +1178,12 @@ namespace SimpleLoginAuthorization.DB
         /// <param name="bChildrenTable">是/否设置与子表对象关联</param>
         /// <param name="recordCount">返回查询记录数</param>
 		/// <returns>结果集</returns>
-        public static List<Account_permission> Select(DbConnection con, int pageSize, int pageIndex, string where, string sortField, bool bParentTable, bool bChildrenTable, out int recordCount)
+        public static List<Account_usergroupassign> Select(DbConnection con, int pageSize, int pageIndex, string where, string sortField, bool bParentTable, bool bChildrenTable, out int recordCount)
         {
-            return Account_permissionBLL._dal.Select(con, pageSize, pageIndex, where, sortField, bParentTable, bChildrenTable, out recordCount);
+            return Account_usergroupassignBLL._dal.Select(con, pageSize, pageIndex, where, sortField, bParentTable, bChildrenTable, out recordCount);
         }
         /// <summary>
-		/// 得到数据表Account_permission满足查询条件的分页记录
+		/// 得到数据表Account_usergroupassign满足查询条件的分页记录
 		/// </summary>
 		/// <param name="con">连接对象</param>
         /// <param name="pageSize">每页显示记录数</param>
@@ -1197,35 +1194,35 @@ namespace SimpleLoginAuthorization.DB
         /// <param name="bChildrenTable">是/否设置与子表对象关联</param>
         /// <param name="recordCount">返回查询记录数</param>
 		/// <returns>结果集</returns>
-        public static List<Account_permission> Select(DbConnection con, int pageSize, int pageIndex, Expression<Func<Account_permission, bool>> expression, string sortField, bool bParentTable, bool bChildrenTable, out int recordCount)
+        public static List<Account_usergroupassign> Select(DbConnection con, int pageSize, int pageIndex, Expression<Func<Account_usergroupassign, bool>> expression, string sortField, bool bParentTable, bool bChildrenTable, out int recordCount)
         {
-            return Account_permissionBLL._dal.Select(con, pageSize, pageIndex, expression, sortField, bParentTable, bChildrenTable, out recordCount);
+            return Account_usergroupassignBLL._dal.Select(con, pageSize, pageIndex, expression, sortField, bParentTable, bChildrenTable, out recordCount);
         }
         /// <summary>
-        /// 得到数据表Account_permission满足查询条件记录
+        /// 得到数据表Account_usergroupassign满足查询条件记录
         /// </summary>
         /// <param name="commandType">命令类型</param>
         /// <param name="sqlCommand">SQL命令</param>
         /// <param name="param">命令参数数组</param>
         /// <returns>结果集</returns>
-        public static List<Account_permission> Select(CommandType commandType, string sqlCommand, params DbParameter[] param)
+        public static List<Account_usergroupassign> Select(CommandType commandType, string sqlCommand, params DbParameter[] param)
         {
-            return Account_permissionBLL._dal.Select(commandType, sqlCommand, param);
+            return Account_usergroupassignBLL._dal.Select(commandType, sqlCommand, param);
         }
         /// <summary>
-		/// 得到数据表Account_permission满足查询条件记录
+		/// 得到数据表Account_usergroupassign满足查询条件记录
 		/// </summary>
 		/// <param name="con">连接对象</param>
         /// <param name="commandType">命令类型</param>
 		/// <param name="sqlCommand">SQL命令</param>
 		/// <param name="param">命令参数数组</param>
 		/// <returns>结果集</returns>
-		public static List<Account_permission> Select(DbConnection con, CommandType commandType, string sqlCommand, params DbParameter[] param)
+		public static List<Account_usergroupassign> Select(DbConnection con, CommandType commandType, string sqlCommand, params DbParameter[] param)
         {
-            return Account_permissionBLL._dal.Select(con, commandType, sqlCommand, param);
+            return Account_usergroupassignBLL._dal.Select(con, commandType, sqlCommand, param);
         }
         /// <summary>
-        /// 得到数据表Account_permission满足查询条件记录
+        /// 得到数据表Account_usergroupassign满足查询条件记录
         /// </summary>
         /// <param name="bParentTable">是/否设置与父表对象关联</param>
         /// <param name="bChildrenTable">是/否设置与子表对象关联</param>
@@ -1233,12 +1230,12 @@ namespace SimpleLoginAuthorization.DB
         /// <param name="sqlCommand">SQL命令</param>
         /// <param name="param">命令参数数组</param>
         /// <returns>结果集</returns>
-        public static List<Account_permission> Select(bool bParentTable, bool bChildrenTable, CommandType commandType, string sqlCommand, params DbParameter[] param)
+        public static List<Account_usergroupassign> Select(bool bParentTable, bool bChildrenTable, CommandType commandType, string sqlCommand, params DbParameter[] param)
         {
-            return Account_permissionBLL._dal.Select(bParentTable, bChildrenTable, commandType, sqlCommand, param);
+            return Account_usergroupassignBLL._dal.Select(bParentTable, bChildrenTable, commandType, sqlCommand, param);
         }
         /// <summary>
-        /// 得到数据表Account_permission满足查询条件记录
+        /// 得到数据表Account_usergroupassign满足查询条件记录
         /// </summary>
         /// <param name="con">连接对象</param>
         /// <param name="bParentTable">是/否设置与父表对象关联</param>
@@ -1247,9 +1244,9 @@ namespace SimpleLoginAuthorization.DB
         /// <param name="sqlCommand">SQL命令</param>
         /// <param name="param">命令参数数组</param>
         /// <returns>结果集</returns>
-        public static List<Account_permission> Select(DbConnection con, bool bParentTable, bool bChildrenTable, CommandType commandType, string sqlCommand, params DbParameter[] param)
+        public static List<Account_usergroupassign> Select(DbConnection con, bool bParentTable, bool bChildrenTable, CommandType commandType, string sqlCommand, params DbParameter[] param)
         {
-            return Account_permissionBLL._dal.Select(con, bParentTable, bChildrenTable, commandType, sqlCommand, param);
+            return Account_usergroupassignBLL._dal.Select(con, bParentTable, bChildrenTable, commandType, sqlCommand, param);
         }
         #endregion
 

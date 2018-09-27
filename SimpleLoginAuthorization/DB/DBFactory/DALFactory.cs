@@ -34,5 +34,37 @@ namespace SimpleLoginAuthorization.DB
         {
             return (IAccount_permissionDAL)_Assembly.CreateInstance(DALFactory._path + ".Account_permissionDAL");
         }
+        /// <summary>
+        /// 通过反射机制，实例化Account_usergroupassign接口对象
+        /// </summary>
+        ///<returns>Account_usergroupassign接口对象/returns>
+        public static IAccount_usergroupassignDAL Account_usergroupassignDALInstance()
+        {
+            return (IAccount_usergroupassignDAL)_Assembly.CreateInstance(DALFactory._path + ".Account_usergroupassignDAL");
+        }
+        /// <summary>
+        /// 通过反射机制，实例化Account_user接口对象
+        /// </summary>
+        ///<returns>Account_user接口对象/returns>
+        public static IAccount_userDAL Account_userDALInstance()
+        {
+            return (IAccount_userDAL)_Assembly.CreateInstance(DALFactory._path + ".Account_userDAL");
+        }
+        /// <summary>
+        /// 通过反射机制，实例化Account_group接口对象
+        /// </summary>
+        ///<returns>Account_group接口对象/returns>
+        public static IAccount_groupDAL Account_groupDALInstance()
+        {
+            return (IAccount_groupDAL)_Assembly.CreateInstance(DALFactory._path + ".Account_groupDAL");
+        }
+        /// <summary>
+        /// 通过反射机制，实例化Account_grouppermissionassign接口对象
+        /// </summary>
+        ///<returns>Account_grouppermissionassign接口对象/returns>
+        public static IAccount_grouppermissionassignDAL Account_grouppermissionassignDALInstance()
+        {
+            return (IAccount_grouppermissionassignDAL)_Assembly.CreateInstance(DALFactory._path + ".Account_grouppermissionassignDAL");
+        }
     }
 }

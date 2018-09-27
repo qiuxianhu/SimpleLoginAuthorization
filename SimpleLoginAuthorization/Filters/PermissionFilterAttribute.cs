@@ -1,6 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using SimpleLoginAuthorization.BIZ;
+using SimpleLoginAuthorization.Common;
+using SimpleLoginAuthorization.Models;
+using System;
 using System.Web;
 using System.Web.Mvc;
 
@@ -31,6 +32,11 @@ namespace SimpleLoginAuthorization
             {
                 return false;
             }
+            User user = httpContext.User.Identity as User;
+            if (user == null)
+            {
+                return false;
+            }
             string[] permissions = base.Permissions;
             if (permissions.Length==0)
             {
@@ -42,7 +48,7 @@ namespace SimpleLoginAuthorization
                     permissions = new string[] { path };
                 }
             }
-            return false;
+            return PermissionBIZ.HasPermission(user.ID, permissions, HttpContext.Current.Timestamp);
         }
         protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
         {
